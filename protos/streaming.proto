@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package video;
+
+service VideoStreaming {
+  rpc launchVideo(File) returns (stream FileData){}
+}
+
+message File {
+  string fileName = 1;
+}
+
+message FileData {
+  bytes data = 1;
+}
